@@ -7,23 +7,37 @@ export class PracticeFormPage extends BasePage {
   protected readonly title = 'Practice Form';
 
   async fillForm(d: PracticeFormData): Promise<void> {
-    await this.page.locator('#firstName').fill(d.firstName);
-    await this.page.locator('#lastName').fill(d.lastName);
-    await this.page.locator('#userEmail').fill(d.email);
-    // exact: true zaroori hai, warna "Male" text "Female" se bhi match ho jata hai
-    await this.page.locator('#genterWrapper').getByText(d.gender, { exact: true }).click();
-    await this.page.locator('#userNumber').fill(d.mobile);
+    await this.fillWithHealing(d.firstName, this.page.locator('#firstName'), this.page.getByRole('textbox', { name: 'First Name' }));
+    await this.fillWithHealing(d.lastName, this.page.locator('#lastName'), this.page.getByRole('textbox', { name: 'Last Name' }));
+    await this.fillWithHealing(d.email, this.page.locator('#userEmail'), this.page.getByRole('textbox', { name: 'name@example.com' }));
+    await this.clickWithHealing(
+      this.page.locator('#genterWrapper').getByText(d.gender, { exact: true }),
+      this.page.getByText(d.gender, { exact: true }),
+    );
+    await this.fillWithHealing(d.mobile, this.page.locator('#userNumber'), this.page.getByRole('textbox', { name: 'Mobile Number' }));
 
-    await this.page.locator('#subjectsInput').fill(d.subject);
-    await this.page.locator('.subjects-auto-complete__option', { hasText: d.subject }).first().click();
-    await this.page.locator('#hobbiesWrapper').getByText(d.hobby, { exact: true }).click();
+    await this.fillWithHealing(d.subject, this.page.locator('#subjectsInput'), this.page.getByRole('textbox', { name: 'Subjects' }));
+    await this.clickWithHealing(
+      this.page.locator('.subjects-auto-complete__option', { hasText: d.subject }).first(),
+      this.page.getByText(d.subject, { exact: true }),
+    );
+    await this.clickWithHealing(
+      this.page.locator('#hobbiesWrapper').getByText(d.hobby, { exact: true }),
+      this.page.getByText(d.hobby, { exact: true }),
+    );
 
-    await this.page.locator('#currentAddress').fill(d.address);
-    await this.page.locator('#state').click();
-    await this.page.locator('#stateCity-wrapper').getByText(d.state, { exact: true }).click();
-    await this.page.locator('#city').click();
-    await this.page.locator('#stateCity-wrapper').getByText(d.city, { exact: true }).click();
-    await this.page.locator('#submit').click();
+    await this.fillWithHealing(d.address, this.page.locator('#currentAddress'), this.page.getByRole('textbox', { name: 'Current Address' }));
+    await this.clickWithHealing(this.page.locator('#state'), this.page.getByText('Select State', { exact: true }));
+    await this.clickWithHealing(
+      this.page.locator('#stateCity-wrapper').getByText(d.state, { exact: true }),
+      this.page.getByText(d.state, { exact: true }),
+    );
+    await this.clickWithHealing(this.page.locator('#city'), this.page.getByText('Select City', { exact: true }));
+    await this.clickWithHealing(
+      this.page.locator('#stateCity-wrapper').getByText(d.city, { exact: true }),
+      this.page.getByText(d.city, { exact: true }),
+    );
+    await this.clickWithHealing(this.page.locator('#submit'), this.page.getByRole('button', { name: 'Submit', exact: true }));
   }
 
   async verifyAndCloseModal(d: PracticeFormData): Promise<void> {
@@ -32,7 +46,6 @@ export class PracticeFormPage extends BasePage {
     for (const value of values) {
       await expect(this.page.locator('.modal-body')).toContainText(value);
     }
-    await this.page.locator('#closeLargeModal').click();
-// delete this line: await expect(this.page.locator('.modal-content')).toBeHidden();
+    await this.clickWithHealing(this.page.locator('#closeLargeModal'), this.page.getByRole('button', { name: 'Close', exact: true }));
   }
 }

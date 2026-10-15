@@ -8,10 +8,16 @@ export class CheckBoxPage extends BasePage {
 
   async selectNode(d: CheckBoxData): Promise<void> {
     // Expand Home using its expand arrow, so Desktop and Downloads become visible
-    await this.page.getByRole('treeitem', { name: 'Home' }).locator('.rc-tree-switcher').click();
+    await this.clickWithHealing(
+      this.page.getByRole('treeitem', { name: 'Home' }).locator('.rc-tree-switcher'),
+      this.page.getByText('Home', { exact: true }).locator('xpath=..').locator('.rc-tree-switcher'),
+    );
 
     // Tick the node's checkbox, e.g. "Select Desktop"
-    await this.page.getByRole('checkbox', { name: `Select ${d.node}` }).click();
+    await this.clickWithHealing(
+      this.page.getByRole('checkbox', { name: `Select ${d.node}` }),
+      this.page.getByLabel(d.node, { exact: true }),
+    );
   }
 
   async verifyResult(d: CheckBoxData): Promise<void> {

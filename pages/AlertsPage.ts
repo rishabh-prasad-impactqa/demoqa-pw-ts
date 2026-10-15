@@ -8,7 +8,10 @@ export class AlertsPage extends BasePage {
   async respondToConfirm(accept: boolean): Promise<void> {
     // dialog handler click se PEHLE lagana padta hai
     this.page.once('dialog', (dialog) => (accept ? dialog.accept() : dialog.dismiss()));
-    await this.page.locator('#confirmButton').click();
+    await this.clickWithHealing(
+      this.page.locator('#confirmButton'),
+      this.page.getByRole('button', { name: 'Click me', exact: true }).nth(2),
+    );
   }
 
   async verifyConfirmResult(expected: string): Promise<void> {

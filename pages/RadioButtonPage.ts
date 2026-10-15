@@ -6,7 +6,10 @@ export class RadioButtonPage extends BasePage {
   protected readonly title = 'Radio Button';
 
   async select(option: string): Promise<void> {
-    await this.page.locator(`label[for="${option.toLowerCase()}Radio"]`).click();
+    await this.clickWithHealing(
+      this.page.locator(`label[for="${option.toLowerCase()}Radio"]`),
+      this.page.getByText(option, { exact: true }),
+    );
   }
 
   async verifyResult(option: string): Promise<void> {
