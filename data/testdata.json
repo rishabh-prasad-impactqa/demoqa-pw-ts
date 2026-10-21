@@ -5,17 +5,23 @@
       "fullName": "Rishabh Prasad",
       "email": "rishabh.qa@example.com",
       "currentAddress": "Delhi, India",
-      "permanentAddress": "Noida, Uttar Pradesh"
+      "permanentAddress": "Noida, Uttar Pradesh",
+      "tags": [
+        "@smoke",
+        "@regression"
+      ]
     },
     {
       "title": "Mumbai user",
       "fullName": "Amit Sharma",
       "email": "amit.sharma@example.com",
       "currentAddress": "Mumbai, Maharashtra",
-      "permanentAddress": "Pune, Maharashtra"
+      "permanentAddress": "Pune, Maharashtra",
+      "tags": [
+        "@regression"
+      ]
     }
   ],
-
   "practiceForm": [
     {
       "title": "Male, NCR Delhi",
@@ -28,7 +34,11 @@
       "hobby": "Sports",
       "address": "Delhi, India",
       "state": "NCR",
-      "city": "Delhi"
+      "city": "Delhi",
+      "tags": [
+        "@smoke",
+        "@regression"
+      ]
     },
     {
       "title": "Female, Haryana Karnal",
@@ -41,20 +51,56 @@
       "hobby": "Reading",
       "address": "Karnal, Haryana",
       "state": "Haryana",
-      "city": "Karnal"
+      "city": "Karnal",
+      "tags": [
+        "@regression"
+      ]
     }
   ],
-
   "checkBox": [
-    { "title": "Desktop", "node": "Desktop", "expected": ["desktop", "notes", "commands"] },
-    { "title": "Downloads", "node": "Downloads", "expected": ["downloads", "wordFile", "excelFile"] }
+    {
+      "title": "Desktop",
+      "node": "Desktop",
+      "expected": [
+        "desktop",
+        "notes",
+        "commands"
+      ],
+      "tags": [
+        "@smoke",
+        "@regression"
+      ]
+    },
+    {
+      "title": "Downloads",
+      "node": "Downloads",
+      "expected": [
+        "downloads",
+        "wordFile",
+        "excelFile"
+      ],
+      "tags": [
+        "@regression"
+      ]
+    }
   ],
-
   "radio": [
-    { "title": "Yes", "option": "Yes" },
-    { "title": "Impressive", "option": "Impressive" }
+    {
+      "title": "Yes",
+      "option": "Yes",
+      "tags": [
+        "@smoke",
+        "@regression"
+      ]
+    },
+    {
+      "title": "Impressive",
+      "option": "Impressive",
+      "tags": [
+        "@regression"
+      ]
+    }
   ],
-
   "webTable": [
     {
       "title": "Add Rishabh",
@@ -63,7 +109,11 @@
       "email": "rishabh.qa@example.com",
       "age": "25",
       "salary": "50000",
-      "department": "QA"
+      "department": "QA",
+      "tags": [
+        "@smoke",
+        "@regression"
+      ]
     },
     {
       "title": "Add Neha",
@@ -72,17 +122,48 @@
       "email": "neha.verma@example.com",
       "age": "28",
       "salary": "60000",
-      "department": "Dev"
+      "department": "Dev",
+      "tags": [
+        "@regression"
+      ]
     }
   ],
-
   "alert": [
-    { "title": "Accept confirm", "accept": true, "expected": "You selected Ok" },
-    { "title": "Dismiss confirm", "accept": false, "expected": "You selected Cancel" }
+    {
+      "title": "Accept confirm",
+      "accept": true,
+      "expected": "You selected Ok",
+      "tags": [
+        "@smoke",
+        "@regression"
+      ]
+    },
+    {
+      "title": "Dismiss confirm",
+      "accept": false,
+      "expected": "You selected Cancel",
+      "tags": [
+        "@regression"
+      ]
+    }
   ],
-
   "tab": [
-    { "title": "What tab", "tab": "what", "expected": "Lorem Ipsum is simply dummy text" },
-    { "title": "Origin tab", "tab": "origin", "expected": "Contrary to popular belief" }
+    {
+      "title": "What tab",
+      "tab": "what",
+      "expected": "Lorem Ipsum is simply dummy text",
+      "tags": [
+        "@smoke",
+        "@regression"
+      ]
+    },
+    {
+      "title": "Origin tab",
+      "tab": "origin",
+      "expected": "Contrary to popular belief",
+      "tags": [
+        "@regression"
+      ]
+    }
   ]
 }

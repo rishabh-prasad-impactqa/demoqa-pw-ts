@@ -1,0 +1,2 @@
+[self-healing] click used fallback locator: getByRole('button', { name: 'Save', exact: true })
+[self-healing] fill used fallback locator: getByRole('textbox', { name: 'Email', exact: true })

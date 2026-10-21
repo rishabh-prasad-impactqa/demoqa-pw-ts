@@ -1,11 +1,12 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Actual test data is in testData.json. Edit that file to add or change data sets.
+// Actual test data is in testdata.json. Edit that file to add or change data sets.
 // This file only defines the types and loads the JSON, so pages and specs stay unchanged.
 
 export interface TextBoxData {
   title: string;
+  tags: string[];
   fullName: string;
   email: string;
   currentAddress: string;
@@ -14,6 +15,7 @@ export interface TextBoxData {
 
 export interface PracticeFormData {
   title: string;
+  tags: string[];
   firstName: string;
   lastName: string;
   email: string;
@@ -28,17 +30,20 @@ export interface PracticeFormData {
 
 export interface CheckBoxData {
   title: string;
+  tags: string[];
   node: string;
   expected: string[];
 }
 
 export interface RadioData {
   title: string;
+  tags: string[];
   option: string;
 }
 
 export interface WebTableData {
   title: string;
+  tags: string[];
   firstName: string;
   lastName: string;
   email: string;
@@ -49,12 +54,14 @@ export interface WebTableData {
 
 export interface AlertData {
   title: string;
+  tags: string[];
   accept: boolean;
   expected: string;
 }
 
 export interface TabData {
   title: string;
+  tags: string[];
   tab: string;
   expected: string;
 }
@@ -70,7 +77,7 @@ interface AllTestData {
 }
 
 const raw: AllTestData = JSON.parse(
-  fs.readFileSync(path.join(__dirname, 'testData.json'), 'utf-8'),
+  fs.readFileSync(path.join(__dirname, 'testdata.json'), 'utf-8'),
 );
 
 export const textBoxData = raw.textBox;
@@ -80,3 +87,20 @@ export const radioData = raw.radio;
 export const webTableData = raw.webTable;
 export const alertData = raw.alert;
 export const tabData = raw.tab;
+
+
+
+
+
+                                           
+
+
+
+
+
+
+
+
+
+
+
