@@ -1,0 +1,1 @@
+[self-healing] click used fallback locator: getByText('English', { exact: true })

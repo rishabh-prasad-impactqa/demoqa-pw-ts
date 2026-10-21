@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rishabh's Report</title>
+<style>
+  :root { --bg:#f4f6fa; --card:#fff; --text:#1d2433; --muted:#6b7385; --line:#e3e7ef;
+          --pass:#1f9d55; --fail:#d64545; --skip:#d99a1e; --accent:#3b5bdb; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#12151c; --card:#1b1f29; --text:#e8ebf2; --muted:#9aa3b5; --line:#2a3040; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:'Segoe UI',system-ui,sans-serif; background:var(--bg); color:var(--text); }
+  header { background:var(--accent); color:#fff; padding:28px 40px; }
+  header h1 { margin:0 0 6px; font-size:30px; }
+  header p { margin:0; opacity:.9; }
+  main { max-width:1200px; margin:0 auto; padding:24px 20px 60px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:14px; margin-bottom:24px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:16px; border-top:4px solid var(--accent); }
+  .card.pass { border-top-color:var(--pass); } .card.fail { border-top-color:var(--fail); } .card.skip { border-top-color:var(--skip); }
+  .card .n { font-size:32px; font-weight:700; } .card .l { color:var(--muted); font-size:13px; }
+  .bar { display:flex; height:12px; border-radius:6px; overflow:hidden; background:var(--line); margin-bottom:24px; }
+  .bar i { display:block; } .bar .p { background:var(--pass); } .bar .f { background:var(--fail); } .bar .s { background:var(--skip); }
+  .filters { margin-bottom:12px; display:flex; gap:8px; flex-wrap:wrap; }
+  .filters button { border:1px solid var(--line); background:var(--card); color:var(--text); padding:6px 14px; border-radius:20px; cursor:pointer; }
+  .filters button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .wrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+  table { width:100%; border-collapse:collapse; font-size:14px; }
+  th, td { text-align:left; padding:10px 14px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; }
+  .badge { padding:3px 10px; border-radius:12px; font-size:12px; font-weight:600; color:#fff; white-space:nowrap; }
+  .badge.passed { background:var(--pass); } .badge.failed { background:var(--fail); } .badge.skipped { background:var(--skip); }
+  .tag { background:var(--line); border-radius:4px; padding:2px 6px; font-size:12px; }
+  .err { background:rgba(214,69,69,.1); color:var(--fail); padding:8px; border-radius:6px; white-space:pre-wrap; font-size:12px; max-height:160px; overflow:auto; }
+  footer { text-align:center; color:var(--muted); font-size:12px; margin-top:24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Rishabh's Report</h1>
+  <p>Run on 21 Oct 2026 at 14:23:17 &nbsp;|&nbsp; Duration 105.9 s</p>
+</header>
+<main>
+  <section class="cards">
+    <div class="card"><div class="n">51</div><div class="l">Total tests</div></div>
+    <div class="card pass"><div class="n">51</div><div class="l">Passed</div></div>
+    <div class="card fail"><div class="n">0</div><div class="l">Failed</div></div>
+    <div class="card skip"><div class="n">0</div><div class="l">Skipped</div></div>
+    <div class="card"><div class="n">100.0%</div><div class="l">Pass rate (1 flaky)</div></div>
+  </section>
+  <div class="bar" title="pass / fail / skip">
+    <i class="p" style="width:100.00%"></i>
+    <i class="f" style="width:0.00%"></i>
+    <i class="s" style="width:0.00%"></i>
+  </div>
+  <div class="filters">
+    <button class="active" data-f="all">All</button>
+    <button data-f="passed">Passed</button>
+    <button data-f="failed">Failed</button>
+    <button data-f="skipped">Skipped</button>
+  </div>
+  <div class="wrap">
+    <table>
+      <thead><tr><th>#</th><th>Test</th><th>Browser</th><th>Tags</th><th>Duration</th><th>Retries</th><th>Status</th></tr></thead>
+      <tbody>
+<tr class="row passed" data-status="passed">
+        <td>1</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC01 - Text Box - Delhi user</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>8.92 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>2</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC01 - Text Box - Mumbai user</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>9.10 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>3</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC02 - Practice Form - Male, NCR Delhi</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>10.47 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>4</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC02 - Practice Form - Female, Haryana Karnal</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>10.57 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>5</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC03 - Check Box - Downloads</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>3.20 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>6</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC04 - Radio Button - Yes</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>2.57 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>7</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC04 - Radio Button - Impressive</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>2.57 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>8</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC05 - Web Tables - Add Rishabh</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>4.60 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>9</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC06 - Alerts - Accept confirm</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>3.83 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>10</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC03 - Check Box - Desktop</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>8.43 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>11</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC05 - Web Tables - Add Neha</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>4.61 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>12</td>
+        <td>has title</td>
+        <td>chromium</td>
+        <td></td>
+        <td>1.20 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>13</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC07 - Tabs - What tab</td>
+        <td>chromium</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>2.82 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>14</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC06 - Alerts - Dismiss confirm</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>2.95 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>15</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC07 - Tabs - Origin tab</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>2.79 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>16</td>
+        <td>get started link</td>
+        <td>chromium</td>
+        <td></td>
+        <td>1.33 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>17</td>
+        <td>uses accessible fallback locators when primary selectors no longer match</td>
+        <td>chromium</td>
+        <td><span class="tag">@regression</span></td>
+        <td>0.47 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>18</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC01 - Text Box - Delhi user</td>
+        <td>firefox</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>11.92 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>19</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC02 - Practice Form - Male, NCR Delhi</td>
+        <td>firefox</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>16.29 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>20</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC03 - Check Box - Desktop</td>
+        <td>firefox</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>7.14 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>21</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC01 - Text Box - Mumbai user</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>16.74 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>22</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC04 - Radio Button - Yes</td>
+        <td>firefox</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>4.95 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>23</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC03 - Check Box - Downloads</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>6.66 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>24</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC04 - Radio Button - Impressive</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>5.36 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>25</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC05 - Web Tables - Add Rishabh</td>
+        <td>firefox</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>9.55 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>26</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC06 - Alerts - Accept confirm</td>
+        <td>firefox</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>7.16 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>27</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC05 - Web Tables - Add Neha</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>9.75 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>28</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC07 - Tabs - What tab</td>
+        <td>firefox</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>5.62 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>29</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC07 - Tabs - Origin tab</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>5.86 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>30</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC06 - Alerts - Dismiss confirm</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>7.85 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>31</td>
+        <td>has title</td>
+        <td>firefox</td>
+        <td></td>
+        <td>3.51 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>32</td>
+        <td>uses accessible fallback locators when primary selectors no longer match</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>2.73 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>33</td>
+        <td>get started link</td>
+        <td>firefox</td>
+        <td></td>
+        <td>5.29 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>34</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC01 - Text Box - Delhi user</td>
+        <td>webkit</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>8.19 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>35</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC01 - Text Box - Mumbai user</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>8.49 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>36</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC02 - Practice Form - Female, Haryana Karnal</td>
+        <td>firefox</td>
+        <td><span class="tag">@regression</span></td>
+        <td>49.60 s</td>
+        <td>1</td>
+        <td><span class="badge passed">PASSED (flaky)</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>37</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC02 - Practice Form - Male, NCR Delhi</td>
+        <td>webkit</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>11.73 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>38</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC03 - Check Box - Desktop</td>
+        <td>webkit</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>6.77 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>39</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC04 - Radio Button - Yes</td>
+        <td>webkit</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>4.53 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>40</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC02 - Practice Form - Female, Haryana Karnal</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>10.21 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>41</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC04 - Radio Button - Impressive</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>4.20 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>42</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC03 - Check Box - Downloads</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>6.23 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>43</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC05 - Web Tables - Add Rishabh</td>
+        <td>webkit</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>6.57 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>44</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC06 - Alerts - Accept confirm</td>
+        <td>webkit</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>5.46 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>45</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC05 - Web Tables - Add Neha</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>7.01 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>46</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC06 - Alerts - Dismiss confirm</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>5.77 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>47</td>
+        <td>has title</td>
+        <td>webkit</td>
+        <td></td>
+        <td>1.24 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>48</td>
+        <td>uses accessible fallback locators when primary selectors no longer match</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>0.80 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>49</td>
+        <td>get started link</td>
+        <td>webkit</td>
+        <td></td>
+        <td>2.32 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>50</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC07 - Tabs - What tab</td>
+        <td>webkit</td>
+        <td><span class="tag">@smoke</span> <span class="tag">@regression</span></td>
+        <td>4.91 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+<tr class="row passed" data-status="passed">
+        <td>51</td>
+        <td>DemoQA E2E Flows (POM) &gt; TC07 - Tabs - Origin tab</td>
+        <td>webkit</td>
+        <td><span class="tag">@regression</span></td>
+        <td>4.78 s</td>
+        <td>0</td>
+        <td><span class="badge passed">PASSED</span></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <footer>Rishabh's Report &middot; generated by customHtmlReporter</footer>
+</main>
+<script>
+  document.querySelectorAll('.filters button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('.filters button').forEach(function (x) { x.classList.remove('active'); });
+      b.classList.add('active');
+      var f = b.getAttribute('data-f');
+      document.querySelectorAll('tr.row').forEach(function (tr) {
+        tr.style.display = (f === 'all' || tr.getAttribute('data-status') === f) ? '' : 'none';
+      });
+    });
+  });
+</script>
+</body>
+</html>

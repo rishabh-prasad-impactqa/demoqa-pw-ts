@@ -26,7 +26,7 @@ export abstract class BasePage {
       if (await candidate.count() !== 1 || !(await candidate.isVisible())) {
         continue;
       }
-
+ 
       const isActionable = action === 'click'
         ? await candidate.isEnabled()
         : await candidate.isEditable();

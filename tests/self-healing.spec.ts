@@ -22,7 +22,7 @@ class SelfHealingTestPage extends BasePage {
   }
 }
 
-test('uses accessible fallback locators when primary selectors no longer match', async ({ page }) => {
+test('uses accessible fallback locators when primary selectors no longer match', { tag: '@regression' }, async ({ page }) => {
   await page.setContent(`
     <button type="button" onclick="this.dataset.clicked = 'true'">Save</button>
     <label for="email">Email</label>
