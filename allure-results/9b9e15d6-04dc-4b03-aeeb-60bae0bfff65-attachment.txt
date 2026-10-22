@@ -1,0 +1,2 @@
+[ACTION] navigate https://demoqa.com/radio-button
+[ACTION] click label[for="yesRadio"]

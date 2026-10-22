@@ -1,0 +1,2 @@
+[ACTION] navigate https://demoqa.com/buttons
+[ACTION] doubleClick #doubleClickBtn
