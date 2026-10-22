@@ -5,13 +5,14 @@ export class AlertsPage extends BasePage {
   protected readonly path = '/alerts';
   protected readonly title = 'Alerts';
 
-  async respondToConfirm(accept: boolean): Promise<void> {
-    // dialog handler click se PEHLE lagana padta hai
-    this.page.once('dialog', (dialog) => (accept ? dialog.accept() : dialog.dismiss()));
-    await this.clickWithHealing(
-      this.page.locator('#confirmButton'),
-      this.page.getByRole('button', { name: 'Click me', exact: true }).nth(2),
-    );
+  /** Opens the confirm box, accepts or dismisses it, and returns the text the alert showed. */
+  async respondToConfirm(accept: boolean): Promise<string> {
+    const openConfirm = () => this.ui.click(['#confirmButton', "(//button[normalize-space()='Click me'])[3]"]);
+    return accept ? this.ui.acceptAlert(openConfirm) : this.ui.dismissAlert(openConfirm);
+  }
+
+  verifyAlertMessage(actual: string, expected: string): void {
+    expect(actual, 'confirm box message').toBe(expected);
   }
 
   async verifyConfirmResult(expected: string): Promise<void> {

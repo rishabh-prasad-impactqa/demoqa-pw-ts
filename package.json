@@ -7,7 +7,12 @@
     "test": "tests"
   },
   "scripts": {
-    "report": "playwright show-report --port 9324"
+    "report": "playwright show-report --port 9324",
+    "test": "playwright test",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:smoke:chromium": "playwright test --grep @smoke --project=chromium",
+    "test:regression:chromium": "playwright test --grep @regression --project=chromium"
   },
   "keywords": [],
   "author": "",

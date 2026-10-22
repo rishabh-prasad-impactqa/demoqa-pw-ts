@@ -7,37 +7,31 @@ export class PracticeFormPage extends BasePage {
   protected readonly title = 'Practice Form';
 
   async fillForm(d: PracticeFormData): Promise<void> {
-    await this.fillWithHealing(d.firstName, this.page.locator('#firstName'), this.page.getByRole('textbox', { name: 'First Name' }));
-    await this.fillWithHealing(d.lastName, this.page.locator('#lastName'), this.page.getByRole('textbox', { name: 'Last Name' }));
-    await this.fillWithHealing(d.email, this.page.locator('#userEmail'), this.page.getByRole('textbox', { name: 'name@example.com' }));
-    await this.clickWithHealing(
-      this.page.locator('#genterWrapper').getByText(d.gender, { exact: true }),
-      this.page.getByText(d.gender, { exact: true }),
-    );
-    await this.fillWithHealing(d.mobile, this.page.locator('#userNumber'), this.page.getByRole('textbox', { name: 'Mobile Number' }));
+    await this.ui.type(['#firstName', "//input[@placeholder='First Name']"], d.firstName);
+    await this.ui.type(['#lastName', "//input[@placeholder='Last Name']"], d.lastName);
+    await this.ui.type(['#userEmail', "//input[@placeholder='name@example.com']"], d.email);
+    await this.ui.click([
+      `//div[@id='genterWrapper']//label[normalize-space()='${d.gender}']`,
+      `//label[normalize-space()='${d.gender}']`,
+    ]);
+    await this.ui.type(['#userNumber', "//input[@placeholder='Mobile Number']"], d.mobile);
 
-    await this.fillWithHealing(d.subject, this.page.locator('#subjectsInput'), this.page.getByRole('textbox', { name: 'Subjects' }));
-    await this.clickWithHealing(
-      this.page.locator('.subjects-auto-complete__option', { hasText: d.subject }).first(),
-      this.page.getByText(d.subject, { exact: true }),
-    );
-    await this.clickWithHealing(
-      this.page.locator('#hobbiesWrapper').getByText(d.hobby, { exact: true }),
-      this.page.getByText(d.hobby, { exact: true }),
-    );
+    await this.ui.type(['#subjectsInput', "//div[@id='subjectsContainer']//input"], d.subject);
+    await this.ui.click([
+      `(//div[contains(@class,'subjects-auto-complete__option')][contains(.,'${d.subject}')])[1]`,
+      `(//*[normalize-space(text())='${d.subject}'])[last()]`,
+    ]);
+    await this.ui.click([
+      `//div[@id='hobbiesWrapper']//label[normalize-space()='${d.hobby}']`,
+      `//label[normalize-space()='${d.hobby}']`,
+    ]);
 
-    await this.fillWithHealing(d.address, this.page.locator('#currentAddress'), this.page.getByRole('textbox', { name: 'Current Address' }));
-    await this.clickWithHealing(this.page.locator('#state'), this.page.getByText('Select State', { exact: true }));
-    await this.clickWithHealing(
-      this.page.locator('#stateCity-wrapper').getByText(d.state, { exact: true }),
-      this.page.getByText(d.state, { exact: true }),
-    );
-    await this.clickWithHealing(this.page.locator('#city'), this.page.getByText('Select City', { exact: true }));
-    await this.clickWithHealing(
-      this.page.locator('#stateCity-wrapper').getByText(d.city, { exact: true }),
-      this.page.getByText(d.city, { exact: true }),
-    );
-    await this.clickWithHealing(this.page.locator('#submit'), this.page.getByRole('button', { name: 'Submit', exact: true }));
+    await this.ui.type(['#currentAddress', "//textarea[@placeholder='Current Address']"], d.address);
+    await this.ui.click(['#state', "//div[text()='Select State']"]);
+    await this.ui.click([`//div[@id='stateCity-wrapper']//div[text()='${d.state}']`, `//*[text()='${d.state}']`]);
+    await this.ui.click(['#city', "//div[text()='Select City']"]);
+    await this.ui.click([`//div[@id='stateCity-wrapper']//div[text()='${d.city}']`, `//*[text()='${d.city}']`]);
+    await this.ui.click(['#submit', "//button[normalize-space()='Submit']"]);
   }
 
   async verifyAndCloseModal(d: PracticeFormData): Promise<void> {
@@ -46,6 +40,6 @@ export class PracticeFormPage extends BasePage {
     for (const value of values) {
       await expect(this.page.locator('.modal-body')).toContainText(value);
     }
-    await this.clickWithHealing(this.page.locator('#closeLargeModal'), this.page.getByRole('button', { name: 'Close', exact: true }));
+    await this.ui.click(['#closeLargeModal', "//button[normalize-space()='Close']"]);
   }
 }

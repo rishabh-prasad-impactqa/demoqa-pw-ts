@@ -6,10 +6,7 @@ export class TabsPage extends BasePage {
   protected readonly title = 'Tabs';
 
   async openTab(tab: string): Promise<void> {
-    await this.clickWithHealing(
-      this.page.locator(`#demo-tab-${tab}`),
-      this.page.getByRole('tab', { name: tab, exact: true }),
-    );
+    await this.ui.click([`#demo-tab-${tab}`, `//a[@role='tab'][contains(@id,'${tab}')]`]);
   }
 
   async verifyContent(tab: string, expected: string): Promise<void> {

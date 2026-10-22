@@ -7,11 +7,14 @@ export class TextBoxPage extends BasePage {
   protected readonly title = 'Text Box';
 
   async submitForm(d: TextBoxData): Promise<void> {
-    await this.fillWithHealing(d.fullName, this.page.locator('#userName'), this.page.getByRole('textbox', { name: 'Full Name' }));
-    await this.fillWithHealing(d.email, this.page.locator('#userEmail'), this.page.getByRole('textbox', { name: 'name@example.com' }));
-    await this.fillWithHealing(d.currentAddress, this.page.locator('#currentAddress'), this.page.getByRole('textbox', { name: 'Current Address' }));
-    await this.fillWithHealing(d.permanentAddress, this.page.locator('#permanentAddress'), this.page.getByRole('textbox', { name: 'Permanent Address' }));
-    await this.clickWithHealing(this.page.locator('#submit'), this.page.getByRole('button', { name: 'Submit', exact: true }));
+    await this.ui.type(['#userName', "//input[@placeholder='Full Name']"], d.fullName);
+    await this.ui.type(['#userEmail', "//input[@placeholder='name@example.com']"], d.email);
+    await this.ui.type(['#currentAddress', "//textarea[@placeholder='Current Address']"], d.currentAddress);
+    await this.ui.type(
+      ['#permanentAddress', "//label[normalize-space()='Permanent Address']/following::textarea[1]"],
+      d.permanentAddress,
+    );
+    await this.ui.click(['#submit', "//button[normalize-space()='Submit']"]);
   }
 
   async verifyOutput(d: TextBoxData): Promise<void> {
