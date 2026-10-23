@@ -1,0 +1,3 @@
+[ACTION] navigate https://demoqa.com/droppable
+[ACTION] click #droppableExample-tab-accept
+[ACTION] dragAndDrop #acceptDropContainer #acceptable => #acceptDropContainer #droppable

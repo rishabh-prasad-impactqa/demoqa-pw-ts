@@ -1,0 +1,16 @@
+[ACTION] navigate https://demoqa.com/automation-practice-form
+[ACTION] type #firstName Neha
+[ACTION] type #lastName Verma
+[ACTION] type #userEmail neha.verma@example.com
+[ACTION] click //div[@id='genterWrapper']//label[normalize-space()='Female']
+[ACTION] type #userNumber 9123456780
+[ACTION] type #subjectsInput English
+[ACTION] click (//div[contains(@class,'subjects-auto-complete__option')][contains(.,'English')])[1]
+[ACTION] click //div[@id='hobbiesWrapper']//label[normalize-space()='Reading']
+[ACTION] type #currentAddress Karnal, Haryana
+[ACTION] click #state
+[ACTION] click //div[@id='stateCity-wrapper']//div[text()='Haryana']
+[ACTION] click #city
+[ACTION] click //div[@id='stateCity-wrapper']//div[text()='Karnal']
+[ACTION] click #submit
+[ACTION] click #closeLargeModal

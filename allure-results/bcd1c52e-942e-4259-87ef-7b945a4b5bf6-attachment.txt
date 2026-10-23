@@ -1,0 +1,9 @@
+[ACTION] navigate https://demoqa.com/webtables
+[ACTION] click #addNewRecordButton
+[ACTION] type #firstName Neha
+[ACTION] type #lastName Verma
+[ACTION] type #userEmail neha.verma@example.com
+[ACTION] type #age 28
+[ACTION] type #salary 60000
+[ACTION] type #department Dev
+[ACTION] click #submit

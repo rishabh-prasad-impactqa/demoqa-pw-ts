@@ -1,0 +1,2 @@
+[self-healing] "#missing-save" failed, used "//button[normalize-space()='Save']"
+[self-healing] "#missing-email" failed, used "//label[normalize-space()='Email']/following-sibling::input"

@@ -1,0 +1,16 @@
+[ACTION] navigate https://demoqa.com/automation-practice-form
+[ACTION] type #firstName Rishabh
+[ACTION] type #lastName Prasad
+[ACTION] type #userEmail rishabh.qa@example.com
+[ACTION] click //div[@id='genterWrapper']//label[normalize-space()='Male']
+[ACTION] type #userNumber 9876543210
+[ACTION] type #subjectsInput Maths
+[ACTION] click (//div[contains(@class,'subjects-auto-complete__option')][contains(.,'Maths')])[1]
+[ACTION] click //div[@id='hobbiesWrapper']//label[normalize-space()='Sports']
+[ACTION] type #currentAddress Delhi, India
+[ACTION] click #state
+[ACTION] click //div[@id='stateCity-wrapper']//div[text()='NCR']
+[ACTION] click #city
+[ACTION] click //div[@id='stateCity-wrapper']//div[text()='Delhi']
+[ACTION] click #submit
+[ACTION] click #closeLargeModal

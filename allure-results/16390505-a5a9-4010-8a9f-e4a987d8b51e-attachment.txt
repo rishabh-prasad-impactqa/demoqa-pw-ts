@@ -1,0 +1,6 @@
+[ACTION] navigate https://demoqa.com/text-box
+[ACTION] type #userName Rishabh Prasad
+[ACTION] type #userEmail rishabh.qa@example.com
+[ACTION] type #currentAddress Delhi, India
+[ACTION] type #permanentAddress Noida, Uttar Pradesh
+[ACTION] click #submit

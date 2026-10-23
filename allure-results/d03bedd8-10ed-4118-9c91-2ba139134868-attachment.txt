@@ -1,0 +1,2 @@
+[ACTION] navigate https://demoqa.com/tabs
+[ACTION] click #demo-tab-what

@@ -1,0 +1,2 @@
+[ACTION] navigate https://demoqa.com/droppable
+[ACTION] dragAndDrop #simpleDropContainer #draggable => #simpleDropContainer #droppable
